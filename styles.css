@@ -1,0 +1,21 @@
+#first_img {
+    width: 150px;
+    height: 150px;
+}
+#scd_img {
+    width: 100px;
+    height: 100px;
+
+}
+#thrd_img {
+    width: 180px;
+    height: 200px;
+}
+#frth_img {
+    width: 140px;
+    height: 200px;
+}
+
+div.nav-item {
+    margin-bottom: 50px;
+}
