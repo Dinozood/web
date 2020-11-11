@@ -1,4 +1,8 @@
 //window.onload = onload_frst();
+var scd_click = true;
+var thrd_click = true;
+var frth_click = true;
+
 
 function get_imgs_count() {
     let img_block = document.getElementsByClassName("col text-center");
@@ -158,133 +162,206 @@ function loaded_scd() {
     //Scd pard
     //params
 
-    scd = document.getElementById("Scd");
-    container = document.createElement("div");
-    container.className = "container nav-fill flex-column";
-    row = document.createElement("div");
-    row.className = "row";
+    if (scd_click) {
+        scd = document.getElementById("Scd");
+        container = document.createElement("div");
+        container.className = "container nav-fill flex-column";
+        row = document.createElement("div");
+        row.className = "row";
 
-    col = document.createElement("div");
-    col.className = "col";
+        col = document.createElement("div");
+        col.className = "col";
 
-    ul = document.createElement("ul");
-    ul.className = "nav justify-content-center";
+        ul = document.createElement("ul");
+        ul.className = "nav justify-content-center";
 
-    ul_name = document.createElement("ul");
-    ul_name.className = "nav flex-column";
+        ul_name = document.createElement("ul");
+        ul_name.className = "nav flex-column";
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("Anchors number is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("Anchors number is"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("Links number is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("Links number is"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("First anchonr's innerHTML"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("First anchonr's innerHTML"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("imgs num is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("imgs num is"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("First img's width is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("First img's width is"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("The most wider width is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("The most wider width is"));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode("Height of all pictures is"));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode("Height of all pictures is"));
+        ul_name.appendChild(li);
 
-    ul.appendChild(ul_name);
-    col.appendChild(ul);
-    row.appendChild(col);
+        ul.appendChild(ul_name);
+        col.appendChild(ul);
+        row.appendChild(col);
 
-    //values
-    col = document.createElement("div");
-    col.className = "col";
+        //values
+        col = document.createElement("div");
+        col.className = "col";
 
-    ul = document.createElement("ul");
-    ul.className = "nav justify-content-center";
+        ul = document.createElement("ul");
+        ul.className = "nav justify-content-center";
 
-    ul_name = document.createElement("ul");
-    ul_name.className = "nav flex-column";
+        ul_name = document.createElement("ul");
+        ul_name.className = "nav flex-column";
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(
-        document.getElementById('anchors').getElementsByTagName("li").length.toString()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(
+            document.getElementById('anchors').getElementsByTagName("li").length.toString()));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(
-        document.getElementById('links').getElementsByTagName("li").length.toString()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(
+            document.getElementById('links').getElementsByTagName("li").length.toString()));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(
-        document.getElementsByClassName('badge badge-primary')[0].innerHTML));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(
+            document.getElementsByClassName('badge badge-primary')[0].innerHTML));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(get_imgs_count()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(get_imgs_count()));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(get_first_img_width()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(get_first_img_width()));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(get_widest_wide()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(get_widest_wide()));
+        ul_name.appendChild(li);
 
-    li = document.createElement("li");
-    li.className = "nav-item";
-    li.appendChild(document.createTextNode(get_total_height()));
-    ul_name.appendChild(li);
+        li = document.createElement("li");
+        li.className = "nav-item";
+        li.appendChild(document.createTextNode(get_total_height()));
+        ul_name.appendChild(li);
 
 
-    ul.appendChild(ul_name);
-    col.appendChild(ul);
-    row.appendChild(col);
+        ul.appendChild(ul_name);
+        col.appendChild(ul);
+        row.appendChild(col);
 
-    container.appendChild(row);
-    scd.appendChild(container);
+        container.appendChild(row);
+        scd.appendChild(container);
+    }
+    scd_click = false;
 }
 
 function onclick_thrd() {
-    block = document.getElementById("Thrd").getElementsByTagName("form");
-    main = document.getElementById("Thrd");
+    if (thrd_click) {
+        block = document.getElementById("Thrd").getElementsByTagName("form");
+        main = document.getElementById("Thrd");
 
-    div = document.createElement("div");
-    div.className = "nav justify-content-center";
+        div = document.createElement("div");
+        div.className = "nav justify-content-center";
+        div.style = "margin: 100px;\n" +
+            "padding: 50px;";
+        for (let i = 0; i < block.length; ++i) {
+            if (i%2==0 && i<8)
+                div.innerText+=block[i].getAttribute("name").toString() + ", ";
+            else if (i%2 == 0)
+                div.innerText+=block[i].getAttribute("name").toString();
+        }
 
-    for (let i = 0; i < block.length; ++i) {
-        if (i%2==0 && i<8)
-            div.innerText+=block[i].getAttribute("name").toString() + ", ";
-        else if (i%2 == 0)
-            div.innerText+=block[i].getAttribute("name").toString();
+
+        main.appendChild(div);
     }
+    thrd_click = false;
+}
 
+function onclick_frth() {
+    if (frth_click) {
+        let box = document.getElementById("Frth"),
+            cols = box.getElementsByClassName("col"),
+            inners_book = [],
+            table = document.createElement("table"),
+            thead = document.createElement("thead"),
+            tbody = document.createElement("tbody"),
+            sum = 0;
 
-    main.appendChild(div);
+        table.className = "table text-center";
+        thead.className = "thead-dark";
+
+        tr = document.createElement("tr");
+        th = document.createElement("th");
+        th.innerText = "Text on Btn";
+        tr.appendChild(th);
+        th = document.createElement("th");
+        th.innerText = "Text times";
+        tr.appendChild(th);
+        th = document.createElement("th");
+        th.innerText = "Links from Btn";
+        tr.appendChild(th);
+        thead.appendChild(tr);
+
+        for (let i = 0; i < cols.length; ++i) {
+            inners_book.push((cols[i].getElementsByTagName("a")[0].innerText));
+        }
+        inners_book = inners_book.filter(function(item, pos) {
+            return inners_book.indexOf(item) == pos;
+        })
+        links = box.getElementsByTagName("a");
+        for (let i = 0; i < inners_book.length; ++i) {
+            tr    = document.createElement("tr");
+            td1    = document.createElement("td");
+            td2    = document.createElement("td");
+            td3    = document.createElement("td");
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            for (let k = 0; k < cols.length; ++k) {
+                tr.childNodes[0].innerText = inners_book[i];
+
+                if (inners_book[i] == cols[k].children[0].textContent) {
+                    sum++;
+                    tr.children[2].innerText += cols[k].children[0].getAttribute("href") + ", ";
+                }
+            }
+            tr.childNodes[1].innerText = sum;
+
+            end = tr.childNodes[2].innerText.length;
+            end = Number(end) - 2;
+            tr.children[2].innerText = tr.childNodes[2].innerText.substring(0, end);
+
+            tbody.appendChild(tr);
+            sum = 0;
+
+        }
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        box.appendChild(table);
+    }
+    frth_click = false;
 }
 
 function show_name() {
@@ -410,68 +487,6 @@ function show_model_non_text_inputs(clicked_id) {
     }
 }
 
-function onclick_frth() {
-    let box = document.getElementById("Frth"),
-        cols = box.getElementsByClassName("col"),
-        inners_book = [],
-        table = document.createElement("table"),
-        thead = document.createElement("thead"),
-        tbody = document.createElement("tbody"),
-        sum = 0;
-
-    table.className = "table text-center";
-    thead.className = "thead-dark";
-
-    tr = document.createElement("tr");
-    th = document.createElement("th");
-    th.innerText = "Text on Btn";
-    tr.appendChild(th);
-    th = document.createElement("th");
-    th.innerText = "Text times";
-    tr.appendChild(th);
-    th = document.createElement("th");
-    th.innerText = "Links from Btn";
-    tr.appendChild(th);
-    thead.appendChild(tr);
-
-    for (let i = 0; i < cols.length; ++i) {
-        inners_book.push((cols[i].getElementsByTagName("a")[0].innerText));
-    }
-    inners_book = inners_book.filter(function(item, pos) {
-        return inners_book.indexOf(item) == pos;
-    })
-    links = box.getElementsByTagName("a");
-    for (let i = 0; i < inners_book.length; ++i) {
-        tr    = document.createElement("tr");
-        td1    = document.createElement("td");
-        td2    = document.createElement("td");
-        td3    = document.createElement("td");
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        for (let k = 0; k < cols.length; ++k) {
-            tr.childNodes[0].innerText = inners_book[i];
-
-            if (inners_book[i] == cols[k].children[0].textContent) {
-                sum++;
-                tr.children[2].innerText += cols[k].children[0].getAttribute("href") + ", ";
-            }
-        }
-        tr.childNodes[1].innerText = sum;
-
-        end = tr.childNodes[2].innerText.length;
-        end = Number(end) - 2;
-        tr.children[2].innerText = tr.childNodes[2].innerText.substring(0, end);
-
-        tbody.appendChild(tr);
-        sum = 0;
-
-    }
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    box.appendChild(table);
-}
 
 function doSmth(a) {
     for (var q=1, i=1; q<a.length; ++q) {
