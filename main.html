@@ -20,7 +20,7 @@
         <a class="nav-link" data-toggle="tab" href="#Thrd" onclick="onclick_thrd()">Thrd</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#Frth">Frth</a>
+        <a class="nav-link" data-toggle="tab" href="#Frth" onclick="onclick_frth()">Frth</a>
     </li>
 </ul>
 <!-- Создание блоков контента для каждой из вкладок -->
@@ -86,7 +86,7 @@
     </div>
     <div class="tab-pane fade" id="Thrd">
         <div class="nav-item">
-            <form name="first">
+            <form name="first" id="first_form">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -100,35 +100,26 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top">Button</button>
-
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Показать имя формы</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" onload="load_form_name()">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                <button type="button" class="btn btn-primary mdlButt" id="myPopover"
-                                        data-toggle="popover">Кнопка с Popover</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button type="button" class="my_btn form_name" id="first_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="first_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="first_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="first_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name="infrastructure">
+            <form name="infrastructure" id="infrastructure_form">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email"  class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Example select</label>
@@ -140,32 +131,46 @@
                         <option>5</option>
                     </select>
                 </div>
+                <button type="button" class="my_btn form_name" id="infrastructure_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="infrastructure_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="infrastructure_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="infrastructure_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
+            </form>
+        </div>
+        <div class="nav-item">
+            <form name="care" id="care_form">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Example file input</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <button type="button" class="my_btn name" id="care_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                        Показать имя формы
+                    </button>
+                    <button type="button" class="my_btn owner" id="care_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                        Принадлежность
+                    </button>
+                    <button type="button" class="my_btn text_fields" id="care_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                        Показать количество текстовых полей
+                    </button>
+                    <button type="button" class="my_btn non_text_fields" id="care_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                        Показать количество не текстовых полей
+                    </button>
+                    <button type="reset" class="my_btn reset">Сбросить</button>
                 </div>
             </form>
         </div>
         <div class="nav-item">
-            <form name="care">
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-            </form>
-        </div>
-        <div class="nav-item">
-            <form name="lick">
+            <form name="lick" id="lick_form">
                 <div class="form-group row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
@@ -178,10 +183,23 @@
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
                 </div>
+                <button type="button" class="my_btn form_name" id="lick_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="lick_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="lick_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="lick_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name ="bin" class="form-inline">
+            <form name ="bin" id="bin_form" class="form-inline">
                 <div class="form-group mb-2">
                     <label for="staticEmail2" class="sr-only">Email</label>
                     <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
@@ -190,11 +208,23 @@
                     <label for="inputPassword2" class="sr-only">Password</label>
                     <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                <button type="button" class="my_btn form_name" id="bin_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="bin_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="bin_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="bin_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name="if">
+            <form name="if" id="if_form">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Example label</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
@@ -203,10 +233,23 @@
                     <label for="formGroupExampleInput2">Another label</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
                 </div>
+                <button type="button" class="my_btn form_name" id="if_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="if_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="if_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="if_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name="hotdog">
+            <form name="hotdog" id="hotdog_form">
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" placeholder="First name">
@@ -215,10 +258,23 @@
                         <input type="text" class="form-control" placeholder="Last name">
                     </div>
                 </div>
+                <button type="button" class="my_btn form_name" id="hotdog_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="hotdog_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="hotdog_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="hotdog_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name="mold">
+            <form name="mold" id="mold_form">
                 <div class="form-row">
                     <div class="col">
                         <input type="text" class="form-control" placeholder="First name">
@@ -227,10 +283,82 @@
                         <input type="text" class="form-control" placeholder="Last name">
                     </div>
                 </div>
+                <button type="button" class="my_btn form_name" id="mold_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="mold_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="mold_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="mold_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
         <div class="nav-item">
-            <form name="intention">
+            <div class="nav-item">
+                <form name="help" id="help_form">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Some Text</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="Some Text">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Another Text</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="Another Text">
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        First radio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Second radio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group row">
+                        <div class="col-sm-2">Checkbox</div>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Example checkbox
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="my_btn form_name" id="help_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                        Показать имя формы
+                    </button>
+                    <button type="button" class="my_btn owner" id="help_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                        Принадлежность
+                    </button>
+                    <button type="button" class="my_btn text_fields" id="help_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                        Показать количество текстовых полей
+                    </button>
+                    <button type="button" class="my_btn non_text_fields" id="help_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                        Показать количество не текстовых полей
+                    </button>
+                    <button type="reset" class="my_btn reset">Сбросить</button>
+                </form>
+            </div>
+            <form name="intention" id="intention_form">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
@@ -274,70 +402,113 @@
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="button" class="my_btn form_name" id="intention_form_inner_btn" onclick="show_model_btn_inner(this.id)">
+                    Показать имя формы
+                </button>
+                <button type="button" class="my_btn owner" id="intention_form_owner_btn" onclick="show_model_btn_owner(this.id)">
+                    Принадлежность
+                </button>
+                <button type="button" class="my_btn text_fields" id="intention_form_text_inputs" onclick="show_model_text_inputs(this.id)">
+                    Показать количество текстовых полей
+                </button>
+                <button type="button" class="my_btn non_text_fields" id="intention_form_non_text_inputs" onclick="show_model_non_text_inputs(this.id)">
+                    Показать количество не текстовых полей
+                </button>
+                <button type="reset" class="my_btn reset">Сбросить</button>
             </form>
         </div>
-        <div class="nav-item">
-            <form name="help">
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+
+        <div class="modal" id="modal_window" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Текст, отображаемый на кнопке</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-                <fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                    First radio
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Second radio
-                                </label>
-                            </div>
-                            <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                                <label class="form-check-label" for="gridRadios3">
-                                    Third disabled radio
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="form-group row">
-                    <div class="col-sm-2">Checkbox</div>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                            <label class="form-check-label" for="gridCheck1">
-                                Example checkbox
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
+
     </div>
     <div class="tab-pane fade" id="Frth">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <a href="https://cs8.pikabu.ru/post_img/big/2017/03/19/10/1489941030196667357.jpg">Киса</a>
+                </div>
+                <div class="col">
+                    <a href="https://vk.com/itmostudents">Что-то из вк</a>
+                </div>
+                <div class="col">
+                    <a href="https://trikky.ru/wp-content/blogs.dir/1/files/2019/06/13/Snimok-ekrana-ot-2018-09-17-21-53-45.png">Киса</a>
+                </div>
+                <div class="col">
+                    <a href="https://classpic.ru/wp-content/uploads/2017/10/30325/mokraja-kisa-sidit-na-kuhne.jpg">Киса</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="https://vk.com/itmoru">Что-то из вк</a>
+                </div>
+                <div class="col">
+                    <a href="https://www.geeksforgeeks.org/interesting-facts-about-javascript/">Some Facts</a>
+                </div>
+                <div class="col">
+                    <a href="https://github.com/Dinozood">GitHub</a>
+                </div>
+                <div class="col">
+                    <a href="https://www.jetbrains.com/ru-ru/webstorm/">My IDE</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="google.com">DNS Host</a>
+                </div>
+                <div class="col">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTg47E9C45KdLgNzAdN_kwfriqC6qQkZjTKLg&usqp=CAU">Киса</a>
+                </div>
+                <div class="col">
+                    <a href="https://www.geeksforgeeks.org/interesting-facts-about-css/">Some Facts</a>
+                </div>
+                <div class="col">
+                    <a href="https://vk.com/fltc.itmo">Что-то из вк</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<footer>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3 text-md-left">
+                <h5 class="text-uppercase">Student work</h5>
+                <p>Page made with Bootstrap</p>
+                <p>Added only couse of license of Icons8</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-6 mb-md-0 mb-3 text-md-right">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a target="_blank" href="https://icons8.ru/icons/set/folded-booklet">Буклет icon</a> иконка от
+                        <a target="_blank" href="https://icons8.ru">Icons8</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">Made by:
+        <a href="https://mdbootstrap.com/"> Dinozood</a>
+    </div>
+</footer>
 <script src="fun.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 <script>

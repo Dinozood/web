@@ -290,14 +290,196 @@ function onclick_thrd() {
 function show_name() {
     $().alert()
 }
-function button_onclick() {
+
+function show_model_btn_inner(clicked_id) {
+    var modal = document.getElementById("modal_window"),
+        span = modal.getElementsByClassName("close")[0],
+        btn = modal.getElementsByClassName("btn btn-primary")[0],
+        title = modal.getElementsByClassName("modal-title")[0],
+        body = modal.getElementsByClassName("modal-body")[0],
+        inner = document.getElementById(clicked_id).innerText;
+    title.innerText = "Текст, отображаемый на кнопке";
+    body.innerHTML = "<p>" + inner +  "</p>";
+
+    modal.style.display = "block";
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
 
 }
 
+function show_model_btn_owner(clicked_id) {
+    var owner = document.getElementById(clicked_id).parentElement,
+        owner_id = owner.getAttribute("id"),
+        modal = document.getElementById("modal_window"),
+        span = modal.getElementsByClassName("close")[0],
+        title = modal.getElementsByClassName("modal-title")[0],
+        btn = modal.getElementsByClassName("btn btn-primary")[0],
+        body = modal.getElementsByClassName("modal-body")[0];
 
-$('#myPopover').onclick(popover({
-    animation: true,
-    content: "Hell",
-    placement: 'right',
-})
-)
+    title.innerText = "id формы, к которой принадлежит кнопка";
+    body.innerHTML = "<p>" + owner_id +  "</p>";
+
+    modal.style.display = "block";
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function show_model_text_inputs(clicked_id) {
+    var owner = document.getElementById(clicked_id).parentNode
+        text_inputs = owner.getElementsByTagName("input"),
+        modal = document.getElementById("modal_window"),
+        span = modal.getElementsByClassName("close")[0],
+        title = modal.getElementsByClassName("modal-title")[0],
+        btn = modal.getElementsByClassName("btn btn-primary")[0],
+        body = modal.getElementsByClassName("modal-body")[0],
+        sum = 0;
+
+    for (let i = 0; i < text_inputs.length; ++i) {
+        if (text_inputs[i].getAttribute("type")=="text")
+            sum++;
+    }
+
+    title.innerText = "Текстовых полей в форме";
+    body.innerHTML = "<p>" + sum +  "</p>";
+
+    modal.style.display = "block";
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function show_model_non_text_inputs(clicked_id) {
+    var owner = document.getElementById(clicked_id).parentNode
+        text_inputs = owner.getElementsByTagName("input"),
+        selects = owner.getElementsByTagName("select"),
+        all_childs = owner.getElementsByTagName("div"),
+        modal = document.getElementById("modal_window"),
+        span = modal.getElementsByClassName("close")[0],
+        title = modal.getElementsByClassName("modal-title")[0],
+        btn = modal.getElementsByClassName("btn btn-primary")[0],
+        body = modal.getElementsByClassName("modal-body")[0],
+        sum = 0;
+
+    for (let i = 0; i < text_inputs.length; ++i) {
+        if (text_inputs[i].getAttribute("type") != "text")
+            sum++;
+    }
+
+    title.innerText = "Текстовых полей в форме";
+    body.innerHTML = "<p>" + (Number(sum) + Number(selects.length))  +  "</p>";
+
+    modal.style.display = "block";
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function onclick_frth() {
+    let box = document.getElementById("Frth"),
+        cols = box.getElementsByClassName("col"),
+        inners_book = [],
+        table = document.createElement("table"),
+        thead = document.createElement("thead"),
+        tbody = document.createElement("tbody"),
+        sum = 0;
+
+    table.className = "table text-center";
+    thead.className = "thead-dark";
+
+    tr = document.createElement("tr");
+    th = document.createElement("th");
+    th.innerText = "Text on Btn";
+    tr.appendChild(th);
+    th = document.createElement("th");
+    th.innerText = "Text times";
+    tr.appendChild(th);
+    th = document.createElement("th");
+    th.innerText = "Links from Btn";
+    tr.appendChild(th);
+    thead.appendChild(tr);
+
+    for (let i = 0; i < cols.length; ++i) {
+        inners_book.push((cols[i].getElementsByTagName("a")[0].innerText));
+    }
+    inners_book = inners_book.filter(function(item, pos) {
+        return inners_book.indexOf(item) == pos;
+    })
+    links = box.getElementsByTagName("a");
+    for (let i = 0; i < inners_book.length; ++i) {
+        tr    = document.createElement("tr");
+        td1    = document.createElement("td");
+        td2    = document.createElement("td");
+        td3    = document.createElement("td");
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        for (let k = 0; k < cols.length; ++k) {
+            tr.childNodes[0].innerText = inners_book[i];
+
+            if (inners_book[i] == cols[k].children[0].textContent) {
+                sum++;
+                tr.children[2].innerText += cols[k].children[0].getAttribute("href") + ", ";
+            }
+        }
+        tr.childNodes[1].innerText = sum;
+
+        end = tr.childNodes[2].innerText.length;
+        end = Number(end) - 2;
+        tr.children[2].innerText = tr.childNodes[2].innerText.substring(0, end);
+
+        tbody.appendChild(tr);
+        sum = 0;
+
+    }
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    box.appendChild(table);
+}
+
+function doSmth(a) {
+    for (var q=1, i=1; q<a.length; ++q) {
+        if (a[q] !== a[q-1]) {
+            a[i++] = a[q];
+        }
+    }
+
+    a.length = i;
+    return a;
+}
